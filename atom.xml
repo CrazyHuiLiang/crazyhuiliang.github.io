@@ -190,6 +190,27 @@
   </entry>
   
   <entry>
+    <title>GDB</title>
+    <link href="http://blog.zhanghuiliang.cn/2017/08/18/GDB/"/>
+    <id>http://blog.zhanghuiliang.cn/2017/08/18/GDB/</id>
+    <published>2017-08-17T16:00:00.000Z</published>
+    <updated>2022-06-30T10:27:34.946Z</updated>
+    
+    <content type="html"><![CDATA[<p>一般来说GDB主要调试的是c／c++程序，首先在编译时，我们必须把调试信息添加到可执行文件中。使用编译器（cc&#x2F;gcc&#x2F;g++)的<code>-g</code>参数可以做到这一点。如：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cc -g tst.c -o tst</span><br></pre></td></tr></table></figure><p>如果没有-g，你将看不见程序的函数名、变量名，所代替的全是运行时的内存地址。当你使用<code>-g</code>成功编译目标代码以后，我们就可以使用<code>gdb</code>来调试程序。</p><h2 id="启动GDB"><a href="#启动GDB" class="headerlink" title="启动GDB"></a>启动GDB</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">program 也就是你的执行文件，一般在当前目录下</span></span><br><span class="line">gdb program</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">如</span></span><br><span class="line">gdb tst</span><br></pre></td></tr></table></figure><h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p>列出原码</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list [行号]</span><br></pre></td></tr></table></figure><p>直接会车表示重复上一次命令</p><p>设置断点在行号处</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break [行号]</span><br></pre></td></tr></table></figure><p>在函数入口处加断点</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">break [函数名]</span><br></pre></td></tr></table></figure><p>查看断点信息</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">info break</span><br></pre></td></tr></table></figure><h2 id="断点跟踪"><a href="#断点跟踪" class="headerlink" title="断点跟踪"></a>断点跟踪</h2><table><thead><tr><th>命令</th><th>功能</th></tr></thead><tbody><tr><td>r</td><td>运行程序，run命令简写</td></tr><tr><td>n</td><td>单条语句执行，next命令简写</td></tr><tr><td>c</td><td>继续运行程序，continue命令简写。</td></tr><tr><td>p i</td><td>打印变量i的值，p是print命令简写。</td></tr><tr><td>bt</td><td>查看函数堆栈</td></tr><tr><td>finish</td><td>退出函数</td></tr><tr><td>q</td><td>退出gdb</td></tr></tbody></table><h2 id="调用系统命令"><a href="#调用系统命令" class="headerlink" title="调用系统命令"></a>调用系统命令</h2><p><code>shell &lt;command string&gt;</code> 调用UNIX的shell来执行 <code>&lt;command string&gt;</code>,环境变量<code>SHELL</code>中定义的UNIX的<code>shell</code>将会被用来执行<code>&lt;command string&gt;</code>，如果SHELL没有定义，那就使用UNIX的标准<code>shell</code>：<code>/bin/sh</code>。（在Windows中使用<code>Command.com</code>或<code>cmd.exe</code>）</p><h2 id="重新构建"><a href="#重新构建" class="headerlink" title="重新构建"></a>重新构建</h2><p>还有一个<code>gdb</code>命令是<code>make</code> ，可以在gdb中执行make命令来重新build自己的程序</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &lt;make-args&gt;</span><br></pre></td></tr></table></figure><p>这个命令等价于</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell make &lt;make-args&gt;</span><br></pre></td></tr></table></figure><blockquote><p>参考资料<br><a href="http://www.gnu.org/software/gdb/documentation/">http://www.gnu.org/software/gdb/documentation/</a></p><p><a href="http://blog.csdn.net/haoel/article/details/2879">http://blog.csdn.net/haoel/article/details/2879</a></p><p><a href="http://blog.csdn.net/haoel/article/details/2880">http://blog.csdn.net/haoel/article/details/2880</a></p></blockquote>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;一般来说GDB主要调试的是c／c++程序，首先在编译时，我们必须把调试信息添加到可执行文件中。使用编译器（cc&amp;#x2F;gcc&amp;#x2F;g++)的&lt;code&gt;-g&lt;/code&gt;参数可以做到这一点。如：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>Ajax与跨域</title>
     <link href="http://blog.zhanghuiliang.cn/2017/02/13/Ajax%E4%B8%8E%E8%B7%A8%E5%9F%9F/"/>
     <id>http://blog.zhanghuiliang.cn/2017/02/13/Ajax%E4%B8%8E%E8%B7%A8%E5%9F%9F/</id>
